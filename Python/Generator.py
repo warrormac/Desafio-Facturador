@@ -5,7 +5,8 @@ table1 = sqlite3.connect('Deuda.db')
 
 cursor_obj = table1.cursor()
 
-table = """ CREATE TABLE Deudas (Codigo VARCHAR(255), Servicio VARCHAR(255), Fecha VARCHAR(255), Precio VARCHAR(255)); """
+table = """ CREATE TABLE if not exists Deudas (Codigo VARCHAR(255), Servicio VARCHAR(255), Fecha VARCHAR(255), Precio VARCHAR(255)); """
+
 
 cursor_obj.execute(table)
 
